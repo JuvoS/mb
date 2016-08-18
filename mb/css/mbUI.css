@@ -1,0 +1,24 @@
+/**
+ * 
+ *@author:JuvoS
+ */
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%/*关闭自动调整字体大小*/;
+	/*可选中情况设定*/
+	/*-webkit-user-select: none;  /* Chrome all / Safari all /opera15+*/  
+	/*-moz-user-select: none;     /* Firefox all */  
+	/*-ms-user-select: none;      /* IE 10+ */  */*/*/
+	/*user-select: none;*/
+}
+
+body {
+	margin: 0
+}
+.bgWhite{
+	background-color: #ffc;
+}
+.banner{
+	width: -webkit-fill-available;
+	height: 100px;
+}
