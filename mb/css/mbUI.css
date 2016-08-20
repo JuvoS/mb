@@ -3,8 +3,15 @@
  *@author:JuvoS
  */
 html {
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%/*关闭自动调整字体大小*/;
+	font: normal 14px / 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  /* 2 */
+	  -webkit-text-size-adjust: 100%;
+	  -ms-text-size-adjust: 100%;
+	  /* 3 */
+	  background: #ffffff;
+	  color: #444444;
+	/*font-family: sans-serif;
+	-webkit-text-size-adjust: 100%/*关闭自动调整字体大小*/;*/
 	/*可选中情况设定*/
 	/*-webkit-user-select: none;  /* Chrome all / Safari all /opera15+*/  
 	/*-moz-user-select: none;     /* Firefox all */  
