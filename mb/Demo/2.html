@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
 		<script src="../jquery.mobile-1.4.5/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
 
@@ -12,9 +12,27 @@
 
 	<body>
 		<!-- Start of first page -->
-		<div data-role="page" id="foo">
-			<div data-role="header">	
+		<div data-role="page" id="foo" data-fullscreen="true">
+			<div data-role="header" data-position="fixed">
+				<a href="" data-icon="delete">Cancel</a>
 				<h1>Foo</h1>
+				<a href="index.html" data-icon="check" data-theme="b">Save</a>
+				<div data-role="navbar">
+
+					<ul>
+
+						<li>
+							<a href="a.html" class="ui-btn-active">One</a>
+						</li>
+
+						<li>
+							<a href="b.html">Two</a>
+						</li>
+						<li>
+							<a href="b.html">Two</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<!-- /header -->
 			<div data-role="content">
@@ -22,36 +40,291 @@
 				<p>View internal page called
 					<a href="#bar">bar</a>
 				</p>
+				<a href="one.html" data-rel="dialog" data-transition="flip">Open dialog</a>
+				<!--data-transition:转场效果pop、sildeup、flip-->
+				<br />
+				<p></p>
+				<div class="ui-grid-a">
+
+					<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+
+					<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
 				</div>
+				<!-- /grid-a -->
+				<div data-role="collapsible-set">
+					<div data-role="collapsible">
+						<div data-role="collapsible">
+
+							<h3>I'm a header</h3>
+							<p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
+						</div>
+						<h3>I'm a header</h3>
+						<p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
+					</div>
+					<div data-role="collapsible" data-collapsed="false">
+
+						<h3>I'm a header</h3>
+						<p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
+					</div>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="name">Text Input:</label>
+					<input type="text" name="name" id="name" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="password">Password Input:</label>
+					<input type="password" name="password" id="password" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="textarea">Textarea:</label>
+					<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="search">Search Input:</label>
+					<input type="search" name="password" id="search" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="slider">Input slider:</label>
+					<input type="range" name="slider" id="slider" value="0" min="0" max="100" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="slider">Select slider:</label>
+					<select name="slider" id="slider" data-role="slider">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend>Agree to the terms:</legend>
+						<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+						<label for="checkbox-1">I agree</label>
+						<input type="checkbox" name="checkbox-4" id="checkbox-4" class="custom" />
+						<label for="checkbox-4">I agree</label>
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain">
+						<legend>Agree to the terms:</legend>
+						<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+						<label for="checkbox-2">I agree</label>
+						<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+						<label for="checkbox-3">I agree</label>
+					</fieldset>
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="select-choice-1" class="select">Choose shipping method:</label>
+					<select name="select-choice-1" id="select-choice-1">
+
+						<option value="standard">Standard: 7 day</option>
+
+						<option value="rush">Rush: 3 days</option>
+
+						<option value="express">Express: next day</option>
+
+						<option value="overnight">Overnight</option>
+					</select>
+				</div>
+
+				<label for="date">Date Input:</label>
+				<input type="date" name="date" id="date" value="" />
+
+				<p></p>
+				<ul data-role="listview">
+
+					<li>
+						<a href="index.html">Acura</a>
+					</li>
+
+					<li>
+						<a href="index.html">Audi</a>
+					</li>
+				</ul>
+
+				<p></p>
+				<ul data-role="listview">
+
+					<li>Pets
+						<ul data-role="listview">
+
+							<li>
+								<a href="index.html">Canary</a>
+							</li>
+
+							<li>
+								<a href="index.html">Cat</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>Farm animals
+						<ul data-role="listview">
+
+							<li>
+								<a href="index.html">Chicken</a>
+							</li>
+
+							<li>
+								<a href="index.html">Cow</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<p></p>
+				<ul data-role="listview" data-split-icon="gear" data-split-theme="d">
+
+					<li>
+						<img src="../img/HBuilder.png" />
+						<h3><a href="index.html">Broken Bells</a></h3>
+						<p>Broken Bells</p>
+
+						<a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
+					</li>
+
+					<li>
+						<img src="../img/HBuilder.png" />
+						<h3><a href="index.html">Warning</a></h3>
+						<p>Hot Chip</p>
+
+						<a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
+					</li>
+
+				</ul>
+
+				<ul data-role="listview">
+
+					<li data-role="list-divider">A</li>
+
+					<li>
+						<a href="index.html">Adam Kinkaid</a>
+					</li>
+
+					<li>
+						<a href="index.html">Alex Wickerham</a>
+					</li>
+
+					<li>
+						<a href="index.html">Avery Johnson</a>
+					</li>
+
+					<li data-role="list-divider">B</li>
+
+					<li>
+						<a href="index.html">Bob Cabot</a>
+					</li>
+
+				</ul>
+				<div data-role="fieldcontain">
+					<ul data-role="listview" data-filter="true">
+
+						<li>
+							<a href="index.html">Acura</a>
+						</li>
+
+						<li>
+							<a href="index.html">Audi</a>
+						</li>
+					</ul>
+				</div>
+				<div data-role="fieldcontain">
+					<ul data-role="listview">
+					
+						<li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+					
+						<li>
+						
+							<h3><a href="index.html">Stephen Weber</a></h3>
+							<p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+						
+							<p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the Jquery team.</p>
+						
+							<p class="ui-li-aside"><strong>6:24</strong>PM</p>
+							</li>
+					
+						<li>
+						
+							<h3><a href="index.html">Jquery Team</a></h3>
+							<p><strong>Boston Conference Planning</strong></p>
+						
+							<p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+						
+							<p class="ui-li-aside"><strong>9:18</strong>AM</p>
+							</li>
+					</ul>
+					<ul data-role="listview">
+					
+						<li>
+							<a href="index.html">Inbox</a> <span class="ui-li-count">12</span></li>
+					
+						<li>
+							<a href="index.html">Outbox</a> <span class="ui-li-count">0</span></li>
+					</ul>
+
+				</div>
+				<div data-role = "fieldcontain">
+					<ul data-role="listview">
+　<li><img src="../img/HBuilder.png" alt="France" class="ui-li-icon"><a href="index.html">France</a> <span class="ui-li-count">4</span></li>
+　 <li><img src="../img/HBuilder.png" alt="Germany" class="ui-li-icon"><a href="index.html">Germany</a> <span class="ui-li-count">4</span></li>
+</ul>
+
+				</div>
+
+			</div>
 			<!-- /content -->
-			<div data-role="footer">	
-				<h4>Page Footer</h4>
+			<div data-role="footer" data-position="fixed">
+				<!--<div data-role = "controlgroup" data-type = "horizontal">
+					<a href="one.html" data-role = "button" data-icon = "plus">ADD</a>
+					<a href="2.html" data-role = "button" data-icon = "arrow-u">up</a>
+				</div>-->
+				<div data-role="navbar">
+
+					<ul>
+
+						<li>
+							<a href="a.html" class="ui-btn-active" data-icon="star">One</a>
+						</li>
+
+						<li>
+							<a href="b.html" data-icon="user">Two</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<!-- /header -->
-			</div>
+		</div>
 		<!-- /page -->
 
-	
 		<!-- Start of second page -->
 		<div data-role="page" id="bar">
 			<div data-role="header">
-				h1>Bar</h1>
-				</div>
+				<h1>Bar</h1>
+			</div>
 			<!-- /header -->
 			<div data-role="content">
 				<p>I'm first in the source order so I'm shown as the page.</p>
 				<p>
 					<a href="#foo">Back to foo</a>
 				</p>
-				</div>
+			</div>
 			<!-- /content -->
 			<div data-role="footer">
 				<h4>Page Footer</h4>
 			</div>
 			<!-- /header -->
-			</div>
+		</div>
 		<!-- /page -->
 
 	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("input[type=range]").val(60).slider("refresh");
+
+			//			var myswitch = $("select#bar");	myswitch[0].selectedIndex = 1;
+			//			myswitch .slider("refresh");
+
+		});
+	</script>
 
 </html>
