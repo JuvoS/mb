@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{/*清除页边距，初始化页面的宽度和高度*/
+				padding: 0;
+				margin: 0;
+				height: 100%;
+				width: 100%;
+			}
+			body{/*body元素定义为弹性盒子*/
+				font: 0.8em arial,helvetica,sans-serif;
+				line-height: 1.4em;
+				/*定义弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*水平并列布局*/
+				-moz-box-orient: horizontal;
+				-webkit-box-orient: horizontal;
+				box-orient:horizontal;
+				/*设置盒子内元素水平居中*/
+				-moz-box-pack: center;
+				-webkit-box-pack: center;
+				box-pack:center;
+			}
+			#page{/*网页内容包含框样式*/
+				height: 100%;
+				max-width: 800px;
+				/*定义为弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*定义垂直布局，实现三行布局效果*/
+				-moz-box-orient: vertical;
+				-webkit-box-orient: vertical;
+				box-orient:vertical;
+				/*定义为弹性尺寸，由于是单列显示，故充满整个页面，
+				 但是max-width属性限制网页内容最宽显示为800px*/
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex:1;
+			}
+			/*标题行、主体区域、页脚行*/
+			header{
+				/*标题行样式*/
+				display: block;
+				padding: 10px;
+				background: #efefef;
+				margin-bottom: 20px;
+				/*设置左下和右下圆角效果*/
+				-moz-border-radius: 0 0 10px 10px;
+				-webkit-border-radius: 0 0 10px 10px;
+				border-radius: 0 0 10px 10px;
+			}
+			footer{/*页脚行样式*/
+				display: block;
+				padding: 10px;
+				background: #EFEFEF;
+				text-align: center;
+				margin-top: 20px;
+				/*设置左上和右上圆角效果*/
+				-moz-border-radius: 10px 10px 0 0;
+				-webkit-border-radius: 10px 10px 0 0;
+				border-radius: 10px 10px 0 0;
+			}
+			#main{/*主体区域样式*/
+				/*定义弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*设置水平布局*/
+				-moz-box-orient: horizontal;
+				-webkit-box-orient: horizontal;
+				box-orient:horizontal;
+				/*挤占#page盒子内所有剩余空间*/
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex:1;
+				/*反向排列布局，让任务栏居左显示*/
+				-moz-box-direction: reverse;
+				-webkit-box-direction: reverse;
+				box-direction:reverse;
+			}
+			section{
+				display: block;/*块状显示内容分区*/
+			}
+			/*博文列表区域的样式*/
+			#content{/*博文列表区域样式*/
+				padding: 0 20px 10px 10px;
+				/*定义弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*垂直显示博文列表*/
+				-moz-box-orient: vertical;
+				-webkit-box-orient: vertical;
+				box-orient:vertical;
+				/*挤满固定任务栏区域外的所有富余空间*/
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex:1;
+				/*设置正常布局排列顺序*/
+				-moz-box-direction: normal;
+				-webkit-box-direction: normal;
+				box-direction:normal;
+			}
+			#content article{/*文章列表样式*/
+				display: block;
+				margin: 0.5em 0;
+				/*普通博文排在下面,指定博文排在上面*/
+				-moz-box-ordinal-group: 2;
+				-webkit-box-ordinal-group: 2;
+				box-ordinal-group:2;
+			}
+			#content article h2{margin-top: 0;}
+			#content nav{/*分页导航样式*/
+				border-top: 1px solid #CCCCCC;
+				padding-top: 10px;
+				margin-top: 10px;
+				/*定义弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*水平显示分页导航链接*/
+				-moz-box-orient: horizontal;
+				-webkit-box-orient: horizontal;
+				box-orient:horizontal;
+				/*分页导航按默认顺序排在底部*/
+				-moz-box-ordinal-group: 2;
+				-webkit-box-ordinal-group: 2;
+				box-ordinal-group:2;
+			}
+			#content nav a{/*定义导航链接的样式*/
+				display: block;
+				/*平均分布两个导航按钮的空间*/
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex:1;
+			}
+			#content nav a:last-child{text-align: right;}
+			#content .topgroup{/*置顶博文样式*/
+				/*设置置顶博文显示在顶部*/
+				-moz-box-ordinal-group: 1;
+				-webkit-box-ordinal-group: 1;
+				box-ordinal-group:1;
+				/*为置顶博文添加阴影效果*/
+				-moz-box-shadow:0 0 5px #ECC;
+				-webkit-box-shadow: 0 0 5px #ECC;
+				box-shadow: 0 0 5px #ECC;
+				/*为置顶博文设计圆角效果*/
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				border: 1px solid #FCC;
+				padding: 10px;
+			}
+			#content .topgroup h2{margin-top: 0;}
+			/*任务栏区域样式*/
+			#sidebar{/*任务栏样式*/
+				width: 180px;/*设置任务栏的宽度为固定值*/
+				padding: 10px;
+				border-right: 1px solid #CCC;
+			}
+			#sidebar div:first-of-type h2:first-of-type{margin-top: 0;}
+			#sidebar ul{/*定义任务栏的列表样式*/
+				/*定义弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*设置任务栏列表项垂直分布显示*/
+				-moz-box-orient: vertical;
+				-webkit-box-orient: vertical;
+				box-orient:vertical;
+				/*按正常顺序显示*/
+				-moz-box-direction: normal;
+				-webkit-box-direction: normal;
+				box-direction:normal;
+			}
+			#sidebar .topgroup{/*任务栏列表中的置顶样式类*/
+				/*在所在盒子内第一个显示*/
+				-moz-box-ordinal-group: 1;
+				-webkit-box-ordinal-group: 1;
+				box-ordinal-group:1;
+				font-weight: bold;
+			}
+			#sidebar li{/*定义列表项样式*/
+				/*普通列表项在后面按顺序显示*/
+				-moz-box-ordinal-group: 2;
+				-webkit-box-ordinal-group: 2;
+				box-ordinal-group:2;
+			}
+			#sidebar form{
+				/*定义弹性盒子*/
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				/*水平显示表单域*/
+				-moz-box-orient: horizontal;
+				-webkit-box-orient: horizontal;
+				box-orient:horizontal;
+			}
+			#sidebar form input[type="text"]{/*定义输入文本框挤满富余空间*/
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex:1;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<h1>博客标题</h1>
+				<p>博客概要</p>
+			</header>
+			<div id="main">
+				<section id="content">
+					<article>
+						<h2>文章标题1</h2>
+						<p>文章内容提要1</p>
+					</article>
+					<article>
+						<h2>文章标题2</h2>
+						<p>文章内容提要2</p>
+					</article>
+					<article class="topgroup">
+						<h2>文章标题(置顶)</h2>
+						<p>文章内容提要</p>
+					</article>
+					<article>
+						<h2>文章标题3</h2>
+						<p>文章内容提要3</p>
+					</article>
+					<article>
+						<h2>文章标题4</h2>
+						<p>文章内容提要4</p>
+					</article>
+					<nav>
+						<a href="#">上一页</a>
+						<a href="#">下一页</a>
+					</nav>
+				</section>
+				<section id="sidebar">
+					<div>
+						<h2>
+							<label for="recherche">搜索</label>
+						</h2>
+						<form action="#">
+							<input type="text" id="recherche"/>
+							<input type="submit" value="搜索" />
+						</form>
+					</div>
+					<div>
+						<h2>友情链接</h2>
+						<ul>
+							<li><a href="#">链接1</a></li>
+							<li><a href="#">链接2</a></li>
+							<li><a href="#">链接3</a></li>
+							<li class="topgroup"><a href="#">链接4(置顶)</a></li>
+							<li><a href="#">链接5</a></li>
+							<li><a href="#">等</a></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<footer>
+				<p>css3新技术体验,与<a href="#">博主</a>一起讨论.</p>
+				<p>更多信息请访问<a href="#">博主网站</a></p>
+			</footer>
+		</div>
+	</body>
+</html>

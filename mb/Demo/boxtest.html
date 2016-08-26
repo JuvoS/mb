@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {margin: 0;padding: 0;text-align: center;}
+			#box {
+				margin: auto;
+				text-align: left;
+				width: 1000px;
+				overflow: hidden;
+			}
+			#box {
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+				box-orient: horizontal;
+				-moz-box-orient: horizontal;
+				-webkit-box-orient: horizontal;
+				/*-moz-box-direction: reverse;*/
+				/*box-direction:reverse;*/
+			}
+			#box1 { width: 200px;			}
+			#box2, #box3{
+				border: solid 1px #ccc;
+			}
+			#box2 {
+				-moz-box-flex: 4;
+				-webkit-box-flex: 4;
+				box-flex: 4;
+			}
+			#box3 {
+				-moz-box-flex: 2;
+				-webkit-box-flex: 2;
+				box-flex: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1"><img src="../img/HBuilder.png"/><a>fdsdf</a></div>
+			<div id="box2">
+				<h2>sfsf</h2>
+				<img src="../jquery.mobile-1.4.5/images/icons-png/action-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/action-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/action-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/action-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/action-black.png" />
+			</div>
+			<div id="box3">
+				<h2>fdf</h2>
+				<img src="../jquery.mobile-1.4.5/images/icons-png/alert-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/alert-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/alert-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/alert-black.png" />
+				<img src="../jquery.mobile-1.4.5/images/icons-png/alert-black.png" />
+			</div>
+		</div>
+	</body>
+</html>
