@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=7d002f2621a3694b3f2335e21a42ec73"></script> 
+		<style>
+			
+			#container {width:480px; height: 720px; }
+		</style>
+	</head>
+	<body>
+		<div id="container"></div> 
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.1.0.js" ></script>
+	<script type="text/javascript">
+
+	$(function(){
+		
+		var map = new AMap.Map("container",{
+			resizeEnable:true,
+			zoomEnable:true,
+			center: [104.20148,30.565967],
+			zoom:16
+		});
+		
+		
+		
+//		workAddress = "四川师范大学成龙校区图书馆";
+		//marker
+		var marker = new AMap.Marker({
+			postion:[104.198524,30.565219],
+			title:'图书馆',
+			map:map
+		});
+		marker.content = "<div>学院办公楼</div>";
+		marker.on('click',function(e){
+			addTransfer(e,'四川师范大学办公楼');
+		});
+		//marker1
+		 var marker1 = new AMap.Marker({
+		        position: [104.198575, 30.565219],
+		        title: '学院办公楼',
+		        map: map
+		    });
+	    marker1.content = "<div>学院办公楼<div>";
+	    marker1.on('click', function (e) {
+	        addTransfer(e, '四川师范大学办公楼');
+	    });
+	    //marker2
+		var marker2 = new AMap.Marker({
+		        position: [104.198592, 30.565219],
+		        title: '第1教学楼',
+		        map: map
+		    });
+		marker2.content = "<div>第1教学楼<div>";
+	    marker2.on('click', function (e) {
+	        addTransfer(e, '四川师范大学第1教学楼');
+	    });
+	})
+	</script>
+</html>
